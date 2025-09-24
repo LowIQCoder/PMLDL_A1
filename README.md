@@ -61,7 +61,9 @@ export AIRFLOW__API__WORKERS=1
 
 And install dependencies
 ```bash
-pip3 install -r requirements.txt
+pip install --upgrade pip setuptools wheel
+pip install "apache-airflow==2.9.3" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.9.3/constraints-3.11.txt"
+pip install -r requirements.txt
 ```
 
 ### 3. Start DAG
