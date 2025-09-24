@@ -73,7 +73,7 @@ Very simple
 airflow standalone
 ```
 
-* **Airflow**: http://localhost:8080
+* **Airflow**: `http://localhost:8080`
 * **Backend (FastAPI)**: `http://localhost:8000/ping`
 * **Frontend (Streamlit)**: `http://localhost:8501`
 
