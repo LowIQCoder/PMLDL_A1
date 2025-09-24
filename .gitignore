@@ -219,4 +219,6 @@ mlruns
 airflow.*
 simple_auth_manager_passwords.json.generated
 logs
-dataset/processed
+dataset/processed/train.csv
+dataset/processed/test.csv
+

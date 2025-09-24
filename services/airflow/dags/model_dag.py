@@ -16,7 +16,7 @@ PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."
 with DAG(
     "torch_pipeline",
     default_args=default_args,
-    schedule='*/5 * * * *',
+    schedule='*/7 * * * *',
     start_date=datetime(2025, 1, 1),
     catchup=False,
 ) as dag:
@@ -36,7 +36,7 @@ with DAG(
     # Deploy Task
     deploy_task = BashOperator(
         task_id="deploy_task",
-        bash_command=f"cd {PROJECT_DIR} && docker compose up --build",
+        bash_command=f"cd {PROJECT_DIR} && docker compose down && docker compose up --build",
     )
 
     # Set task dependencies
