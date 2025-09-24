@@ -74,7 +74,8 @@ airflow standalone
 ```
 
 * **Airflow**: `http://localhost:8080`
-* **Backend (FastAPI)**: `http://localhost:8000/ping`
+* **MLFlow**: `htt[://localhost:5000`
+* **Backend (FastAPI)**: `http://localhost:8000/docs`
 * **Frontend (Streamlit)**: `http://localhost:8501`
 
 ## Usage
