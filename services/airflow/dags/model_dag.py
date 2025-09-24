@@ -16,7 +16,7 @@ PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."
 with DAG(
     "torch_pipeline",
     default_args=default_args,
-    schedule='*/7 * * * *',
+    schedule='*/5 * * * *',
     start_date=datetime(2025, 1, 1),
     catchup=False,
 ) as dag:
