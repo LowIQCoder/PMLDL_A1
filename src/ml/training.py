@@ -11,16 +11,18 @@ import numpy as np
 
 import mlflow
 
-mlflow.set_tracking_uri("/mnt/c/Users/Марсель/Documents/co/PMLDL_A1/mlruns")
+MLFLOW_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../mlruns"))
+BASE_DIR = os.path.dirname(os.path.dirname("/mnt/c/Users/Марсель/Documents/co/PMLDL_A1/dataset"))
+
+DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset"))
+MODEL_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../models"))
+
+mlflow.set_tracking_uri(MLFLOW_DIR)
 
 torch.manual_seed(42)
 np.random.seed(42)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
-BASE_DIR = os.path.dirname(os.path.dirname("/mnt/c/Users/Марсель/Documents/co/PMLDL_A1/dataset"))
-
-DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset"))
-MODEL_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../models"))
 
 train_loader, val_loader, test_loader = get_mnist_loaders(DATA_DIR, batch_size=64)
 
